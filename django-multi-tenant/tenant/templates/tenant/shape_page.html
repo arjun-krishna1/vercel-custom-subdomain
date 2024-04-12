@@ -1,0 +1,21 @@
+
+{% if tenant %}
+    <h1>{{ tenant.name }}</h1>
+
+
+    <ul>
+        This is our catchphrase
+    </ul>
+
+
+    <ul>
+        The background is a custom generated gradient
+    </ul>
+{% else %}
+    <form action="" method="post" enctype="multipart/form-data" id="create-shape-form">
+        {% csrf_token %}
+        <input id="nickname-input" name="nickname-input" placeholder="Choose a nickname (Ask Ketchum)">
+        <input id="backstory-input" name="backstory-input" placeholder="Choose a backstory (I want to be the Pokemon Champion of the Kanto region!)">
+        <button type="submit" id="submitButton" class="btn btn-primary mt-3"><i class="fas fa-upload"></i> Create Shape</button>
+    </form>
+{% endif %}
